@@ -11,3 +11,13 @@ limit 10;
 SELECT emp_no FROM salaries
 ORDER BY salary desc
 limit 5 OFFSET 45;
+
+SELECT CONCAT('Hello ', 'Codeup', '!');
+
+SELECT NOW();
+
+SELECT CURDATE();
+
+SELECT CURTIME();
+
+SELECT UNIX_TIMESTAMP();
