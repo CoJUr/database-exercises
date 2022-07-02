@@ -11,9 +11,9 @@ CREATE TABLE students (
 DROP TABLE IF EXISTS enrolled;
 
 CREATE TABLE enrolled (
-                          id INT unsigned not null,
+                          student_id INT unsigned not null,
                           class varchar(50) NOT NULL DEFAULT 'PLACEHOLDER',
-                          PRIMARY KEY (id)
+                          PRIMARY KEY (class)
 );
 
 

@@ -11,13 +11,25 @@ VALUES  (0147, 'Lisa Jones'),
 
 TRUNCATE TABLE enrolled;
 
-INSERT INTO enrolled(id, class)
+INSERT INTO enrolled(student_id, class)
 VALUES (0147, 'Math'),
-       (1008, 'Physics');
+       (1008, 'Physics'),
+        (1008, 'History');
+
+
+
 
 SELECT * FROM students
-JOIN enrolled
-ON enrolled.id = students.id;
+INNER JOIN enrolled
+ON enrolled.student_id = students.id;
+
+
+select students.name, enrolled.class
+    FROM students
+        INNER JOIN enrolled
+            on students.id = enrolled.student_id;
+
+
 
 
 TRUNCATE TABLE albums;
@@ -39,3 +51,18 @@ VALUES (1, 'John Coltrane'),
 SELECT * FROM artists
 join albums
 ON albums.artist_id = artists.artist_id;
+# ==
+SELECT * FROM artists
+inner join albums
+ON albums.artist_id = artists.artist_id;
+
+
+SELECT artists.name, albums.title
+FROM artists
+INNER JOIN albums
+ON artists.artist_id = albums.artist_id;
+
+select artists.artist_id, artists.name, albums.title
+FROM artists
+INNER JOIN albums
+ON artists.artist_id = albums.artist_id
