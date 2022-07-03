@@ -107,7 +107,7 @@ ON art.artist_id = alb.artist_id;
 SELECT *
 FROM students
 LEFT JOIN enrolled
-ON students.id = enrolled.student_id
+ON students.id = enrolled.student_id;
 # right table items only appear if have a match in the left
 
 SELECT * FROM artists
