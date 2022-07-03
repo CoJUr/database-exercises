@@ -4,7 +4,7 @@ DROP TABLE IF EXISTS students;
 
 CREATE TABLE students (
     id int unsigned not null,
-    name varchar(50) NOT NULL DEFAULT 'UNNAMED',
+    name varchar(50),
     PRIMARY KEY (id)
 );
 
@@ -12,7 +12,7 @@ DROP TABLE IF EXISTS enrolled;
 
 CREATE TABLE enrolled (
                           student_id INT unsigned not null,
-                          class varchar(50) NOT NULL DEFAULT 'PLACEHOLDER',
+                          class varchar(50),
                           PRIMARY KEY (class)
 );
 
