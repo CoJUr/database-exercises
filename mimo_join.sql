@@ -103,3 +103,8 @@ WHERE age >
       (SELECT age
        FROM age_statistics
        WHERE description = 'average user age');
+
+ALTER TABLE age_statistics
+ADD UNIQUE (age);
+
+describe age_statistics;
