@@ -2,6 +2,8 @@ use mimo;
 
 show tables;
 
+
+
 TRUNCATE TABLE students;
 INSERT INTO students(id, name)
 VALUES  (0147, 'Lisa Jones'),
