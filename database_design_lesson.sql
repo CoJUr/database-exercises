@@ -33,7 +33,7 @@ VALUES ('Douglas', 'Adams', 'I love deadlines. I love the whooshing noise they m
        ('Douglas', 'Adams', 'Don''t panic'),
        ('Douglas', 'Adams', 'Time is an illusion. Lunchtime doubly so.'),
        ('Mark', 'Twain', 'Clothes make the man. Naked people have little or no influence on society.'),
-       ('Kurt', 'Vonnegut', 'Clothes make the man. Naked people have little or no influence on society.')
+       ('Kurt', 'Vonnegut', 'Clothes make the man. Naked people have little or no influence on society.');
 
 describe quotes;
 select * from quotes;
@@ -92,6 +92,20 @@ select * from topics;
 
 # quote can be related to many or 0 topics. topic can have many or 0 quotes
 # = many-to-many relationship. need and associative table between the 2.
-# many-to-many should
+# * many-to-many should not use FKs on either table * use a separate table to relate the two instead
 
-# 2. relate topics to quotes
+# 2. relate topics to quotes with assoc table
+
+CREATE TABLE quote_topic (
+                             quote_id INTEGER UNSIGNED NOT NULL,
+                             topic_id INTEGER UNSIGNED NOT NULL,
+                             FOREIGN KEY (quote_id) REFERENCES quotes(id),
+                             FOREIGN KEY (topic_id) REFERENCES topics(id)
+);
+
+INSERT INTO quote_topic(quote_id, topic_id) VALUES (1,2), (1,3), (2,4), (3,1), (3,2), (3,3), (3,4), (4,2), (5,1);
+
+select * from quote_topic;
+
+
+# another many-many ex: EVENTS and ATTENDEES
