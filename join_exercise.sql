@@ -7,6 +7,10 @@ CREATE TABLE if not exists roles (
                        name VARCHAR(100) NOT NULL,
                        PRIMARY KEY (id)
 );
+
+
+
+
 CREATE TABLE if not exists users (
                        id INT UNSIGNED NOT NULL AUTO_INCREMENT,
                        name VARCHAR(100) NOT NULL,
