@@ -36,3 +36,8 @@ values ('Michael Jackson', 'Thriller', 1982, 'Pop/Rock/R&B', 47.3),
        ('Santana', 'Supernatural', 1999, 'Rock', 20.5),
        ('Guns N Roses', 'Appetite for Destruction', 1987, 'Hard rock', 21.6);
 
+SELECT MIN(sales), max(sales), avg(sales) FROM albums;
+
+select DISTINCT artist FROM albums;
+
+select LENGTH(genre), name from albums;

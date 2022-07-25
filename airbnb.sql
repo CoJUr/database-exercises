@@ -1,5 +1,7 @@
 create database if not exists airbnb_db;
 
+USE airbnb_db;
+
 create TABLE IF NOT EXISTS Userz
 (
     id      INT primary key auto_increment,
@@ -69,3 +71,20 @@ ON Rooms.owner_id = Userz.id;
 #        street
 # FROM Userz
 # INNER JOIN Rooms.owner_id;
+
+SELECT COUNT(CASE WHEN Userz.country='US' THEN 1
+    ELSE NULL
+    END) AS `people from usa`,
+    count(CASE WHEN country='NZ' THEN 1
+        ELSE NULL
+        END) AS `kiwis !`
+from Userz;
+
+SELECT COUNT(*) FROM Userz WHERE bio IS NULL;
+
+SELECT COUNT(case when bio is null THEN 1
+    ELSE NULL
+    END)
+FROM Userz;
+
+SELECT COUNT(*) - COUNT(country) FROM Userz
